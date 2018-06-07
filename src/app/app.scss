@@ -1,0 +1,33 @@
+.titulo {
+    font-family: 'Assistant', sans-serif;
+   // font-family: 'Permanent Marker', cursive;
+    font-size: 50px;
+    text-align: center;
+    animation-name: animacao1;
+    animation-duration: 1s;
+}
+
+@keyframes animacao1 {
+    from {
+        color: white;
+    }
+    to {
+        color: black;
+    }
+}
+
+.novo{
+    font-family: 'Assistant', sans-serif;
+   // font-family: 'Permanent Marker', cursive;
+    font-size: 40px;
+    text-align: center;
+    animation: animacao2 4s infinite;
+}
+
+@keyframes animacao2 {
+    0% {color:#0610a1}
+    25% {color: #0a4da3}
+    50% {color:#3b48c0}
+    75% {color:#0a4da3}
+    100% {color:#0610a1}
+}

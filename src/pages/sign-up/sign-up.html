@@ -1,0 +1,66 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cadastro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-slides pager>
+
+    <ion-slide>
+      <p class="titulo">Qual é seu nome?</p>
+      <p class="novo">{{user.nome}}</p>
+      <ion-item>
+        <ion-label floating>Digite seu nome aqui</ion-label>
+        <ion-input type="text" [(ngModel)]="user.nome"></ion-input>
+      </ion-item>
+      <br>
+      <br>
+    </ion-slide>
+    <ion-slide>
+      <p class="titulo">Qual é seu telefone?</p>
+      <p class="novo">{{user.telefone}}</p>
+      <ion-item>
+        <ion-label floating>Digite seu número aqui</ion-label>
+        <ion-input type="tel" [brmasker]="{mask:'(00) 00000-0000', len:15}" [(ngModel)]="user.telefone"></ion-input>
+      </ion-item>
+      <br>
+      <br>
+    </ion-slide>
+    <ion-slide>
+      <p class="titulo">Qual é seu e-mail?</p>
+      <p class="novo">{{user.email}}</p>
+      <ion-item>
+        <ion-label floating>Digite seu e-mail aqui</ion-label>
+        <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+      </ion-item>
+      <br>
+      <br>
+    </ion-slide>
+    <ion-slide>
+      <p class="titulo">Hora da segurança! :)</p>
+      <b style="margin-bottom: 10px">{{mensagemDeConfirmacao}}</b>
+      <ion-item>
+        <ion-label floating>Digite sua senha</ion-label>
+        <ion-input type="password" [(ngModel)]="user.senha"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Digite novamente sua senha</ion-label>
+        <ion-input type="password" [(ngModel)]="user.confirmacaoSenha" (keyup)="verificarSenhas()"></ion-input>
+      </ion-item>
+      <br>
+      <br>
+    </ion-slide>
+    <ion-slide>
+      <p class="titulo">Verifique seus dados!</p>
+      <div *ngFor="let retorno of retornoDeVerificacao">{{retorno}}</div>
+      <button ion-button block color="secondary" (click)="verificarDados()">Verifique os Dados Aqui!</button>
+    </ion-slide>
+  </ion-slides>
+
+
+</ion-content>
